@@ -3,6 +3,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Главная" android:id="@+id/f_1" />
-    <item android:title="Исполняемые заявки" android:id="@+id/f_2" />
     <item android:title="История" android:id="@+id/f_3" />
 </menu>
