@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.myapplication.databinding.ActivityMainAppBinding;
 import com.example.myapplication.databinding.ActivityMainBinding;
@@ -33,6 +34,5 @@ public class main_app extends AppCompatActivity {
                     return false;
                 }
             });
-
         };
     }
