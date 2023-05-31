@@ -5,5 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".create_task">
+    <LinearLayout android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
 
+        <EditText
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:background="@color/cardview_shadow_start_color"
+            android:hint="Введите описание ошибки"
+            android:layout_gravity="top|center"
+            android:layout_margin="16dp"
+            android:id="@+id/task_desc"
+            />
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:text="Выберите Категорию заявки из выпадающего списка: "
+            android:layout_gravity="center"
+            android:layout_margin="16dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:id="@+id/spinnercategory"
+            />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Выберите отдел для обращения: "
+            android:layout_gravity="center"/>
+        <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:id="@+id/spinerdepartment"
+        />
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:text="Подтвердить"
+            android:id="@+id/apply"/>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

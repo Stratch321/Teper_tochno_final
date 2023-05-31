@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_list">
+        <item>Поломка принтера</item>
+        <item>Поломка ПК</item>
+        <item>Проблемы с интернетом</item>
+    </string-array>
+    <string-array name="department_list">
+        <item>Системные администраторы</item>
+        <item>Группа поддержки пользователей</item>
+        <item>Группа по работе с принтерами</item>
+    </string-array>
+</resources>

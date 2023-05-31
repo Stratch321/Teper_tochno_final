@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link f_1#newInstance} factory method to
@@ -61,7 +63,8 @@ public class f_1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Button bt1 = (Button) getActivity().findViewById(R.id.floating_button);
+        View view = inflater.inflate(R.layout.fragment_f_1, container, false);
+        FloatingActionButton bt1 = view.findViewById(R.id.floating_button);
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +72,8 @@ public class f_1 extends Fragment {
                 startActivity(intent);
             }
         });
-        return inflater.inflate(R.layout.fragment_f_1, container, false);
+        return view;
+
 
 
     }
