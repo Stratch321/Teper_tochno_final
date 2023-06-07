@@ -3,5 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Главная" android:id="@+id/f_1" android:icon="@drawable/default_home_house_main_menu_icon_1320086046804091155"/>
-    <item android:title="История" android:id="@+id/f_3" android:icon="@drawable/history"/>
+    <item android:title="История" android:id="@+id/f_2" android:icon="@drawable/history"/>
+    <item android:title="История" android:id="@+id/f_3" android:icon="@drawable/userfew"/>
 </menu>
