@@ -48,6 +48,7 @@ public class create_task extends AppCompatActivity {
                 task.put("Description", desc.getText().toString());
                 task.put("Category", spin.getSelectedItem().toString());
                 task.put("Department", spin2.getSelectedItem().toString());
+                task.put("Status", "In work");
 
                 db.collection("tasks").add(task).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

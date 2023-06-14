@@ -3,10 +3,17 @@ package com.example.myapplication;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,11 +61,40 @@ public class f_2 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    task_infoAdapter adapter;
+    FirebaseAuth auth;
+    FirebaseFirestore store;
+    FirebaseUser user;
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_f_2, container, false);
+        View view = inflater.inflate(R.layout.fragment_f_2, container, false);
+        recyclerView = view.findViewById(R.id.recycler2);
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        store = FirebaseFirestore.getInstance();
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        FirestoreRecyclerOptions<task_info> options = new
+                FirestoreRecyclerOptions.Builder<task_info>().setQuery(store.collection("tasks")
+                .whereEqualTo("User_id", user.getUid())
+                .whereEqualTo("Status", "Completed"), task_info.class).build();
+        adapter = new task_infoAdapter(options);
+        recyclerView.setAdapter(adapter);
+        return view;
+    }
+
+    public void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+    public void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
     }
 }
