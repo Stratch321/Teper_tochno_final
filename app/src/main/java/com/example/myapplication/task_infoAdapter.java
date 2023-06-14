@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,14 @@ public class task_infoAdapter extends FirestoreRecyclerAdapter<task_info, task_i
             task_name = itemView.findViewById(R.id.task_name);
             task_category = itemView.findViewById(R.id.task_category);
             task_department = itemView.findViewById(R.id.task_department);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), task_desc.class);
+                    intent.putExtra("namedesc", task_name.getText().toString());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }
